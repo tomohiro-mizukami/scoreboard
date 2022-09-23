@@ -1,42 +1,21 @@
 const scoreHome   = document.getElementById('scoreHome'),
       scoreGuest  = document.getElementById('scoreGuest'),
-      add1Home    = document.getElementById('add1Home'),
-      add2Home    = document.getElementById('add2Home'),
-      add3Home    = document.getElementById('add3Home'),
-      add1Guest   = document.getElementById('add1Guest'),
-      add2Guest   = document.getElementById('add2Guest'),
-      add3Guest   = document.getElementById('add3Guest')
+      addHome     = document.querySelectorAll('.add-home'),
+      addGuest    = document.querySelectorAll('.add-guest')
+      
+let   countHome   = 0,
+      countGuest  = 0
 
-let count = 0
-
-// Home
-add1Home.addEventListener('click', () => {
-  count += 1
-  scoreHome.textContent = count
+addHome.forEach((element, i) => {
+  element.addEventListener('click', () => {
+    countHome += i+1
+    scoreHome.textContent = countHome
+  })
 })
 
-add2Home.addEventListener('click', () => {
-  count += 2
-  scoreHome.textContent = count
-})
-
-add3Home.addEventListener('click', () => {
-  count += 3
-  scoreHome.textContent = count
-})
-
-// Guest
-add1Guest.addEventListener('click', () => {
-  count += 1
-  scoreGuest.textContent = count
-})
-
-add2Guest.addEventListener('click', () => {
-  count += 2
-  scoreGuest.textContent = count
-})
-
-add3Guest.addEventListener('click', () => {
-  count += 3
-  scoreGuest.textContent = count
+addGuest.forEach((element, i) => {
+  element.addEventListener('click', () => {
+    countGuest += i+1
+    scoreGuest.textContent = countGuest
+  })
 })
